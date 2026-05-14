@@ -18,7 +18,8 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install RenderCV
-        run: pip install rendercv
+        # 修复关键点：必须使用 "rendercv[full]"
+        run: pip install "rendercv[full]"
       - name: Render CV
         run: rendercv render resume-zh.yaml
       - name: Upload Artifacts
