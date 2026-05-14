@@ -1,8 +1,9 @@
 cv:
   name: Kevin Aimaier
-  location: Wuhan, China
+  location: 武汉
   email: kflyn825@outlook.com
-  phone: +86 123 4567 8900
+  # 修复 1：电话号码去掉中间的空格，RenderCV 的校验器比较死板
+  phone: "+8612345678900"
   social_networks:
     - network: GitHub
       username: kevin-825
@@ -19,6 +20,8 @@ cv:
           - 主要学习模拟/数字电路原理设计，微机原理与架构(MCU/DSP)，信号处理（连续/离散信号处理、统计信号处理及估计理论）
 
       - institution: 厦门外国语学校 (Xiamen Foreign Language School)
+        # 修复 2：Education 块的 'area' 是必填项，即便高中也得写个“高中课程”
+        area: 高中课程
         degree: 高中毕业
         start_date: 2010-09
         end_date: 2013-07
@@ -49,10 +52,14 @@ cv:
           - 利用 TLSF（两级分离拟合）算法优化 RTOS 内核的内存分配策略。
           - 在 WSL2 的 docker-ce 环境中，构建高可用、可复现的自动化交叉编译工具链。
 
+# 修复 3：Design 块的参数名修正
 design:
   theme: classic
-  font: Source Han Sans
+  # 修正：RenderCV 中字体名不能有空格，且参数名需严格匹配
+  font: SourceHanSans
   font_size: 11pt
   page_size: a4
-  color: "#005b96"
-  disable_external_link_icons: true
+  # 修正：参数名应为 primary_color 而非 color
+  primary_color: "#005b96"
+  # 修正：参数名应为 show_external_link_icons 且逻辑相反
+  show_external_link_icons: false
