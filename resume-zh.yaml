@@ -7,46 +7,52 @@ cv:
     - network: GitHub
       username: kevin-825
 
-  design:
-    theme: classic
-    font: Source Han Sans # Native Chinese support
-    font_size: 11pt
-    page_size: a4
-    color: "#005b96"
-    disable_external_link_icons: true
-
-    sections:
-      education:
-        - institution: 西北工业大学(985/211、双一流)
-          area: 电子信息工程 (EE)
-          degree: 工学学士
-          start_date: 2013-09
-          end_date: 2017-07
-          location: 西安, 中国
-          highlights:
-            - 主要学习 模拟/数字电路原理设计，微机原理与架构(MCU/DSP)，信号处理（连续/离散信号处理、统计信号处理及估计理论）
-    
-        - institution: 厦门外国语学校 (Xiamen Foreign Language School)
-          degree: 高中毕业
-          start_date: 2010-09
-          end_date: 2013-07
-          location: 厦门, 中国
+  sections:
+    education:
+      - institution: 西北工业大学(985/211、双一流)
+        area: 电子信息工程 (EE)
+        degree: 工学学士
+        start_date: 2013-09
+        end_date: 2017-07
+        location: 西安, 中国
+        highlights:
+          - 主要学习 模拟/数字电路原理设计，微机原理与架构(MCU/DSP)，信号处理（连续/离散信号处理、统计信号处理及估计理论）
   
-      skills:
-          - 编程语言: C (8 年底层与驱动实战), Python, Bash Shell, , Matlab/Simulink, JIM tcl, JSON/YAML, powershell.
-          - 处理器架构: 深入掌握 RISC-V, ARMv7/v8-M, AArch64 以及 Xtensa DSP 指令集架构；精通多种中断控制模型 (CLINT/PLIC/AIA, NVIC/GIC)、特权/异常模型 (Machine/User mode, EL0-EL3) 及内存保护单元 (PMP/MPU, MMU 与 Cache 一致性).
-          - 芯片底层开发: 具备多家芯片原厂 SoC 开发经验，熟悉内部总线 (AHB/APB, Matrix/Arbiter)；熟悉 FPGA 硅前/硅后 Bring-up 验证；熟练开发 BootROM/Bootloader 及底层 HAL 驱动 (涵盖 I2C, SPI, UART, WDT, DMA, NOR/NAND, DDR 控制器等).
-          - 操作系统内核: 具备丰富的 RTOS (FreeRTOS, LiteOS) 及 Linux 内核实战经验；深入理解内核任务调度 (CFS/FIFO/RR)、内存寻址与管理、同步原语及 VFS/sysfs 子系统；熟练掌握 Linux 字符设备驱动、设备树 (Device Tree)、构建系统 (Buildroot, Kconfig) 及系统初始化流程 (U-boot, initrd, systemd).
-          - 调试与工具链: 精通 GNU 工具链 (GCC, GDB, nm, objdump) 及 CMake/Makefile 构建；具备丰富的底层 Debug 经验 (Trace, 内存踩踏/泄漏, Coredump, 宕机现场分析)；熟练应用 QEMU 模拟器、Docker 容器化开发以及 CI/CD (GitLab, Jenkins) 自动化流程.
-          - 综合与进阶: 熟练运用 Generative AI (Gemini Pro, Copilot) 进行辅助编程与复杂问题排查；具备极强的全英文原版技术文献解析与自主学习能力 (持续跟进 MIT OCW, Linux Foundation 等前沿硬核课程).
-    
-      experience:
-        - company: Open Source
-          position: Embedded Systems Engineer
-          start_date: 2024-01
-          end_date: present
-          location: Shenzhen
-          highlights:
-            - 开发基于 RISC-V 架构的底层 Linux 内核驱动，熟练掌握 PMP/PLIC 等硬件特性。
-            - 利用 TLSF（两级分离拟合）算法优化 RTOS 内核的内存分配策略。
-            - 在 WSL2 的 docker-ce 环境中，构建高可用、可复现的自动化交叉编译工具链。
+      - institution: 厦门外国语学校 (Xiamen Foreign Language School)
+        degree: 高中毕业
+        start_date: 2010-09
+        end_date: 2013-07
+        location: 厦门, 中国
+
+    skills:
+      - label: 编程语言
+        details: C (8 年底层与驱动实战), Python, Bash Shell, Matlab/Simulink, JIM tcl, JSON/YAML, powershell.
+      - label: 处理器架构
+        details: 深入掌握 RISC-V, ARMv7/v8-M, AArch64 以及 Xtensa DSP 指令集架构；精通多种中断控制模型 (CLINT/PLIC/AIA, NVIC/GIC)、特权/异常模型 (Machine/User mode, EL0-EL3) 及内存保护单元 (PMP/MPU, MMU 与 Cache 一致性).
+      - label: 芯片底层开发
+        details: 具备多家芯片原厂 SoC 开发经验，熟悉内部总线 (AHB/APB, Matrix/Arbiter)；熟悉 FPGA 硅前/硅后 Bring-up 验证；熟练开发 BootROM/Bootloader 及底层 HAL 驱动 (涵盖 I2C, SPI, UART, WDT, DMA, NOR/NAND, DDR 控制器等).
+      - label: 操作系统内核
+        details: 具备丰富的 RTOS (FreeRTOS, LiteOS) 及 Linux 内核实战经验；深入理解内核任务调度 (CFS/FIFO/RR)、内存寻址与管理、同步原语及 VFS/sysfs 子系统；熟练掌握 Linux 字符设备驱动、设备树 (Device Tree)、构建系统 (Buildroot, Kconfig) 及系统初始化流程 (U-boot, initrd, systemd).
+      - label: 调试与工具链
+        details: 精通 GNU 工具链 (GCC, GDB, nm, objdump) 及 CMake/Makefile 构建；具备丰富的底层 Debug 经验 (Trace, 内存踩踏/泄漏, Coredump, 宕机现场分析)；熟练应用 QEMU 模拟器、Docker 容器化开发以及 CI/CD (GitLab, Jenkins) 自动化流程.
+      - label: 综合与进阶
+        details: 熟练运用 Generative AI (Gemini Pro, Copilot) 进行辅助编程与复杂问题排查；具备极强的全英文原版技术文献解析与自主学习能力 (持续跟进 MIT OCW, Linux Foundation 等前沿硬核课程).
+  
+    experience:
+      - company: Open Source
+        position: Embedded Systems Engineer
+        start_date: 2024-01
+        end_date: present
+        location: Shenzhen
+        highlights:
+          - 开发基于 RISC-V 架构的底层 Linux 内核驱动，熟练掌握 PMP/PLIC 等硬件特性。
+          - 利用 TLSF（两级分离拟合）算法优化 RTOS 内核的内存分配策略。
+          - 在 WSL2 的 docker-ce 环境中，构建高可用、可复现的自动化交叉编译工具链。
+
+design:
+  theme: classic
+  font: Source Han Sans # Native Chinese support
+  font_size: 11pt
+  page_size: a4
+  color: "#005b96"
+  disable_external_link_icons: true
