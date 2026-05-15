@@ -94,6 +94,7 @@ run_rendercv() {
         -u $(id -u):$(id -g) \
         -v "$(pwd)":/workspace \
         "$IMAGE_NAME" render "$target_yaml"; then
+        echo ""
         log_info "Compilation Success! Check the 'rendercv_output/' directory."
     else
         log_err "RenderCV Engine failed during PDF generation."

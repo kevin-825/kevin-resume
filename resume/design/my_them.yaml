@@ -122,9 +122,6 @@ design:
         POSITION | LOCATION
         SUMMARY
         HIGHLIGHTS
-        PROJECTS0
-        PROJECTS1
-        PROJECTS2
       date_and_location_column: ''
     publication_entry:
       main_column: |-
