@@ -1,0 +1,136 @@
+design:
+  theme: classic
+  page:
+    size: a4
+    top_margin: 0.7in
+    bottom_margin: 0.7in
+    left_margin: 0.7in
+    right_margin: 0.7in
+    show_footer: true
+    show_top_note: true
+  colors:
+    body: rgb(0, 0, 0)
+    name: rgb(0, 79, 144)
+    headline: rgb(0, 79, 144)
+    connections: rgb(0, 79, 144)
+    section_titles: rgb(0, 79, 144)
+    links: rgb(0, 79, 144)
+    footer: rgb(128, 128, 128)
+    top_note: rgb(128, 128, 128)
+  typography:
+    # 【优化】将行距从 0.6em 提升至 0.75em，给方块字留出呼吸空间
+    line_spacing: 0.75em
+    alignment: justified
+    date_and_location_column_alignment: right
+    font_family:
+      # 【优化】全局应用思源黑体，确保中英文混排完美对齐，且 CI 云端不乱码
+      body: Noto Sans CJK SC
+      name: Noto Sans CJK SC
+      headline: Noto Sans CJK SC
+      connections: Noto Sans CJK SC
+      section_titles: Noto Sans CJK SC
+    font_size:
+      body: 10pt
+      # 【优化】中文名字通常只有 2-4 个字，30pt 会显得大得突兀，24pt 更加精致沉稳
+      name: 24pt
+      headline: 10pt
+      connections: 10pt
+      section_titles: 1.4em
+    small_caps:
+      name: false
+      headline: false
+      connections: false
+      section_titles: false
+    bold:
+      name: true
+      headline: false
+      connections: false
+      section_titles: true
+  links:
+    underline: false
+    show_external_link_icon: false
+  header:
+    alignment: left # 【优化】中式简历通常把名字和联系方式左对齐，视觉动线更统一
+    photo_width: 3.5cm
+    photo_position: left
+    photo_space_left: 0.4cm
+    photo_space_right: 0.4cm
+    space_below_name: 0.7cm
+    space_below_headline: 0.7cm
+    space_below_connections: 0.7cm
+    connections:
+      phone_number_format: national
+      hyperlink: true
+      show_icons: true
+      display_urls_instead_of_usernames: false
+      separator: '  |  ' # 【优化】使用竖线分割联系方式，比紧凑的空格更好看
+      space_between_connections: 0.2cm
+  section_titles:
+    type: with_full_line # 【优化】中式排版更倾向于使用贯穿全宽的分割线，显得更正式
+    line_thickness: 0.5pt
+    space_above: 0.5cm
+    space_below: 0.3cm
+  sections:
+    allow_page_break: true
+    space_between_regular_entries: 1.5em
+    space_between_text_based_entries: 0.4em
+    show_time_spans_in:
+      - experience
+  entries:
+    date_and_location_width: 0cm
+    side_space: 0.2cm
+    space_between_columns: 0.1cm
+    allow_page_break: false
+    short_second_row: true
+    degree_width: 1cm
+    summary:
+      space_above: 0.15cm # 微调：给描述文字上方留出一点间隙
+      space_left: 0cm
+    highlights:
+      bullet: •
+      nested_bullet: ◦
+      space_left: 0.15cm
+      space_above: 0.15cm
+      space_between_items: 0.15cm # 微调：要点之间的间距拉开一点，避免密集恐惧
+      space_between_bullet_and_text: 0.5em
+  templates:
+    footer: '*NAME -- PAGE_NUMBER/TOTAL_PAGES*'
+    top_note: '*LAST_UPDATED CURRENT_DATE*'
+    single_date: MONTH_ABBREVIATION YEAR
+    date_range: START_DATE – END_DATE
+    time_span: HOW_MANY_YEARS YEARS HOW_MANY_MONTHS MONTHS
+    one_line_entry:
+      main_column: '**LABEL:** DETAILS'
+    education_entry:
+      main_column: |-      
+        DATE #h(1em) **INSTITUTION** #h(1em) AREA #h(1em) DEGREE #h(1em) LOCATION
+        SUMMARY
+        HIGHLIGHTS
+      degree_column: ''
+      date_and_location_column: ''
+    normal_entry:
+      main_column: |-
+        DATE
+        **NAME** | LOCATION
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column: ''
+    experience_entry:
+      main_column: |-
+        DATE
+        **COMPANY**
+        POSITION | LOCATION
+        SUMMARY
+        HIGHLIGHTS
+        PROJECTS0
+        PROJECTS1
+        PROJECTS2
+      date_and_location_column: ''
+    publication_entry:
+      main_column: |-
+        DATE
+        **TITLE**
+        SUMMARY
+        AUTHORS
+        URL (JOURNAL)
+      date_and_location_column: ''

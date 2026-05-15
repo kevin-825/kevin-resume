@@ -18,6 +18,8 @@ declare -A PROFILES=(
     ["en"]="en classic"                 # 英文默认：经典主题
     ["zh-eng"]="zh engineeringclassic"  # 中文：工程师主题
     ["en-eng"]="en engineeringclassic"  # 英文：工程师主题
+    ["myth-zh"]="zh my_them"              # 中文：自定义主题
+    ["myth-en"]="en my_them"              # 英文：自定义主题
 )
 
 # ==========================================
@@ -104,7 +106,7 @@ run_rendercv() {
 # ==========================================
 main() {
     # 默认 Profile 设为 zh
-    local selected_profile=${1:-"zh"}
+    local selected_profile=${1:-"myth-zh"}
 
     # 查字典：验证 Profile 是否存在
     if [[ -z "${PROFILES[$selected_profile]:-}" ]]; then
