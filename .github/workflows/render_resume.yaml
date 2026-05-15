@@ -1,36 +1,71 @@
-name: Render a CV
+name: Render CV via Custom Docker Engine
 
 on:
-  push:
-    branches:
-      - main
+  # push:                 <-- 注释掉或删掉这行
+  #   branches:           <-- 注释掉或删掉这行
+  #     - main            <-- 注释掉或删掉这行
+  workflow_dispatch:      # <-- 加上这个！这是“手动执行”的开关
 
 permissions:
   contents: write
 
 jobs:
-  rendercv:
-    name: RenderCV
+  build-and-render:
+    name: Submodule Build & RenderCV Pipeline
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout Repository with Nested Submodules
+        uses: actions/checkout@v4
         with:
-          python-version: "3.12"
-      - name: Install RenderCV
-        # 修复关键点：必须使用 "rendercv[full]"
-        run: pip install "rendercv[full]"
-      - name: Render CV
-        run: rendercv render resume-zh.yaml
+          submodules: recursive
+          fetch-depth: 0
+
+      # 1. 设置基于目录 Hash 的 Docker 镜像缓存
+      - name: Cache Custom Docker Image
+        id: cache-docker
+        uses: actions/cache@v4
+        with:
+          path: /tmp/docker-resume-build.tar
+          # 只要 .docker 目录下的文件或子模块 commit 没有变动，这个 key 就是唯一的
+          key: ${{ runner.os }}-docker-${{ hashFiles('.docker/**') }}
+
+      # 2. 缓存命中：直接加载镜像 (耗时约 10 秒)
+      - name: Load Cached Docker Image
+        if: steps.cache-docker.outputs.cache-hit == 'true'
+        run: |
+          echo ">>> Cache Hit! Loading kflyn825/resume-build:latest from cache..."
+          docker load -i /tmp/docker-resume-build.tar
+
+      # 3. 缓存未命中：触发你的底层脚本重编译，并打包保存 (仅在依赖变更时执行)
+      - name: Build and Save Custom Docker Image
+        if: steps.cache-docker.outputs.cache-hit != 'true'
+        run: |
+          echo ">>> Cache Miss! Building kflyn825/resume-build:latest from submodules..."
+          cd .docker
+          chmod +x build.sh
+          ./build.sh
+          
+          echo ">>> Saving image to cache..."
+          # 将构建好的镜像打包成 tar，供 Actions 缓存机制抓取
+          docker save kflyn825/resume-build:latest -o /tmp/docker-resume-build.tar
+
+      # 4. 正常渲染简历
+      - name: Render Chinese CV (zh Profile)
+        run: |
+          echo ">>> Compiling CV using the custom Docker engine..."
+          chmod +x build.sh
+          ./build.sh zh
+
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: RenderCV Output
           path: rendercv_output
+
       - name: Commit and Push PDFs
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add rendercv_output/*.pdf
-          git commit -m "Auto-update PDF" || echo "No changes to commit"
+          git commit -m "Auto-update PDF via Cached Docker Engine" || echo "No changes to commit"
           git push

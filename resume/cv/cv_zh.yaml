@@ -32,6 +32,7 @@ cv:
     skills:
       - label: 编程语言
         details: C (8 年底层与驱动实战), Python, Bash Shell, Matlab/Simulink, JIM tcl, JSON/YAML, powershell.
+
       - label: 处理器架构
         details: 深入掌握 RISC-V, ARMv7/v8-M, AArch64 以及 Xtensa DSP 指令集架构；精通多种中断控制模型 (CLINT/PLIC/AIA, NVIC/GIC)、特权/异常模型 (Machine/User mode, EL0-EL3) 及内存保护单元 (PMP/MPU, MMU 与 Cache 一致性).
       - label: 芯片底层开发
@@ -107,8 +108,3 @@ cv:
         highlights:
           - 参与产品学习，协助工程任务，并在现场提供技术支持。
           - **离职原因：** 专业不匹配及对工作内容缺乏兴趣，工作 5 个月后自愿离职。
-    
-
-# 修复 3：简化 design 块。新版 RenderCV 会根据内容自动处理中文字体
-design:
-  theme: classic
