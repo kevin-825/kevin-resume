@@ -1,0 +1,3 @@
+
+./build.sh                # 默认渲染中文
+./build.sh resume-en.yaml # 渲染指定文件
