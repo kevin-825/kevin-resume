@@ -1,0 +1,87 @@
+以下是你能用的模具，以及它们强制规定的可用 Key：
+
+1. OneLineEntry (单行条目) —— 我们写“技能”和“进修”用的就是这个
+专门用于展示“键值对”形式的短信息。
+
+强制 Key:
+
+label (对应左侧加粗的标题)
+
+details (对应右侧的详细内容)
+
+2. ExperienceEntry (工作经历条目)
+专门用于展示职业经历。
+
+可用 Key:
+
+company (公司名)
+
+position (职位名)
+
+date (或 start_date / end_date)
+
+location (地点)
+
+summary (一段总结文字)
+
+highlights (列表形式的战绩)
+
+3. EducationEntry (教育背景条目)
+专门用于展示学校和学位。
+
+可用 Key:
+
+institution (学校名)
+
+area (专业领域)
+
+degree (学位)
+
+date / start_date / end_date
+
+location
+
+highlights
+
+4. NormalEntry (通用常规条目)
+如果你觉得上面的都不合适，可以用这个最通用的。
+
+可用 Key:
+
+name (条目标题)
+
+location
+
+date
+
+summary
+
+highlights
+
+5. PublicationEntry (出版物/论文条目)
+可用 Key:
+
+title (标题)
+
+authors (作者列表)
+
+doi / url / journal / date
+
+6. TextEntry (纯文本条目)
+就是一段没有任何特殊格式的纯字符串（极少用到）。
+
+🔍 这些预设定义在哪里看？(授人以渔)
+如果你以后想自己查阅，或者想知道还能塞入什么隐藏字段，你有两个最直接的途径：
+
+途径 A：查看你的 design.yaml (如 classic.yaml) 的最底部
+打开你的配置文件，滑动到最底部的 templates: 模块。你会看到底层 Typst 代码是如何将这些固定变量拼装起来的：
+
+YAML
+  templates:
+    # 这里清晰地暴露了底层只会读取 LABEL 和 DETAILS 这两个变量
+    one_line_entry:
+      main_column: '**LABEL:** DETAILS'
+途径 B：查阅 RenderCV 官方文档的 Schema 规范
+在 RenderCV 的官方文档（或其 GitHub 仓库的 README 中），有一节专门叫 "Data Model" (数据模型)。里面用极其详尽的表格，列出了每一种 Entry Type 支持哪些 Key，哪些是必填的（Required），哪些是选填的（Optional）。
+
+所以，当时之所以指导你用 label 和 details，是因为我们希望“专业进修”这个板块呈现出 Linux 基金会: 深入攻读... 这样的“左标题 + 右详情”的单行紧凑排版，这就必定需要调用底层的 OneLineEntry 数据结构。

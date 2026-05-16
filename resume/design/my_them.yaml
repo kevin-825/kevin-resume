@@ -117,8 +117,7 @@ design:
       date_and_location_column: ''
     experience_entry:
       main_column: |-
-        DATE
-        **COMPANY**
+        **COMPANY**  DATE
         POSITION | LOCATION
         SUMMARY
         HIGHLIGHTS
