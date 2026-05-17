@@ -81,7 +81,7 @@
   date: datetime(
     year: 2026,
     month: 5,
-    day: 16,
+    day: 17,
   ),
 )
 
@@ -273,7 +273,7 @@
   [
     #strong[#emph[#sym.ast.basic#h(0pt, weak: true) QemuRTOS]]#sym.ast.basic#h(0pt, weak: true)
 
-    - #strong[项目URL：]https:\/\/github.com\/kevin-825\/QemuRTOS
+    - #strong[项目URL：]#link("https://github.com/kevin-825/QemuRTOS")[https:\/\/github.com\/kevin-825\/QemuRTOS]
 
     - #strong[项目简介] QemuRTOS是为了学习研究RTOS内核设计而开发的实验性的实时操作系统（RTOS）开发平台，目前适配RISC-V 32\/64 virt虚拟开发板和arm AArch64 virt虚拟开发板和arm Cortex-M virt虚拟开发板。适合编写RTOS内核，非常适合研究学习GIC\/APLIC\/PLIC\/NVIC等硬件，学习研究RTOS内核设计和实现。目前已完成bring up和内存管理malloc，printk，uart ns6550和pl011驱动。基于kconfig和make file的Docker 容器化的构建系统，支持一键编译生成可运行可执行elf文件和运行在qemu上。
 
@@ -286,7 +286,7 @@
   [
     #strong[#emph[#sym.ast.basic#h(0pt, weak: true) QemuEmbeddedLinux]]#sym.ast.basic#h(0pt, weak: true)
 
-    - #strong[项目URL：]https:\/\/github.com\/kevin-825\/QemuEmbeddedLinux
+    - #strong[项目URL：]#link("https://github.com/kevin-825/QemuEmbeddedLinux")[https:\/\/github.com\/kevin-825\/QemuEmbeddedLinux]
 
     - #strong[项目简介] QemuEmbeddedLinux为了学习Linux foundation也就是linux基金会官方提供的Linux kernel internal and development（LFD 420 ）课程而创建的。rootfs构建工具选择的是buildroot，基于Docker容器化的编译环境里编译。boot loader用的ARM ATF + uboot，支持一键编译生成rootfs，Imgaze, vmlinux,uboot.bin, bl.bin，genimage 打包成Sdcard image和直接运行在qemu。启用了ccache，编译非常快速。非常适合学习研究Linux内核开发，kernel module开发，驱动开发，系统调优，内核调试等。也适合学习研究arm和riscv架构的底层开发，芯片Bring-up等。
 
@@ -301,7 +301,7 @@
   [
     #strong[#emph[#sym.ast.basic#h(0pt, weak: true) EmbeddedDevContainer]]#sym.ast.basic#h(0pt, weak: true)
 
-    - #strong[项目URL：]https:\/\/github.com\/kevin-825\/EmbeddedDevContainer
+    - #strong[项目URL：]#link("https://github.com/kevin-825/EmbeddedDevContainer")[https:\/\/github.com\/kevin-825\/EmbeddedDevContainer]
 
     - #strong[项目简介] EmbeddedDevContainer是一个嵌入式开发环境容器化项目，基于Docker构建，包含了从零写的多个Dockerfile和Dockerfile模板，适用于支持以上两个项目的容器化，理论上经过简单修改添加内容来支持任何项目容器化开发。目前该项目包含了用于编译GNU tool chain（gcc，gdb等）的Docker image Dockerfile，和arm\/riscv交叉编译环境的Docker image Dockerfile。这个项目的目标是为了让嵌入式开发者能够快速搭建一个功能完善的嵌入式开发环境，避免繁琐的环境配置过程，提高开发效率。
 
@@ -312,21 +312,19 @@
   ],
 )
 
-== 专业进修\/进阶培训 Continuous Education & Advanced Training
+== 专业进修 Continuous Education & Advanced Training
 
 #regular-entry(
   [
-    2023.01 – 2023.06
+    #strong[Linux Kernel Internals and Development (LFD420)] | Linux Foundation 官方高级课程
 
-    #strong[Linux Foundation LFD420 Linux Kernel Internal and Development] | Linux Foundation
+    - #link("https://training.linuxfoundation.org/training/linux-kernel-internals-and-development")[Linux Foundation 官方课程主页]
 
-    - #strong[课程URL：]https:\/\/training.linuxfoundation.org\/training\/linux-kernel-internals-and-development
+    - 深入研究 Linux 内核核心架构，系统攻克内核模块开发、设备驱动模型、内核态高并发同步原语及性能调优。
 
-    - 深入研究 Linux 内核架构，涵盖内核模块开发、设备驱动编写、内核调试与性能优化。
+    - #strong[核心实战：] 基于 QEMU 模拟器从零构建完整的嵌入式 Linux 系统，独立编写并集成自定义 Kernel Module 与底层设备驱动，并完成系统级安全加固。
 
-    - #strong[核心项目：] 基于 QEMU 模拟器构建了一个完整的嵌入式 Linux 系统，适配 RISC-V 和 ARM 架构。
-
-    - #strong[技术栈：] C, Python, Shell Script, Buildroot, U-boot, ARM Trusted Firmware (ATF), QEMU, Docker, RISC-V, AARCH64.
+    - #strong[技术栈：] C, Linux Kernel, ARM Trusted Firmware (ATF), QEMU, U-boot, Buildroot.
 
   ],
   [
@@ -335,32 +333,15 @@
 
 #regular-entry(
   [
-    2023.07 – 2023.12
+    #strong[Developing Embedded Linux Device Drivers (LFD435)] | Linux Foundation 官方高级课程
 
-    #strong[Developing Embedded Linux Device Drivers (LFD435)] | Linux Foundation
+    - #link("https://training.linuxfoundation.org/training/developing-embedded-linux-device-drivers/")[Linux Foundation 官方课程主页]
 
-    - 专注于嵌入式 Linux 设备驱动开发，涵盖字符设备、块设备、网络设备等多种类型。
+    - 专注于 Linux 核心子系统与驱动框架，深度覆盖字符设备 (Char Device)、块设备及网络设备底层实现。
 
-    - #strong[核心项目：] 开发了一个基于 ARM Cortex-M 的自定义外设驱动，并成功集成到 Linux 内核中。
+    - #strong[核心实战：] 结合个人开源项目 `QemuEmbeddedLinux`，完成了从系统构建、Platform Driver 到字符设备驱动开发的全生命周期演练与内核树外编译实践。
 
-    - #strong[技术栈：] C, Linux Kernel, Device Tree, ARM Cortex-M.
-
-  ],
-  [
-  ],
-)
-
-#regular-entry(
-  [
-    2024.01 – 2024.06
-
-    #strong[Embedded Linux Development (LFD450)] | Linux Foundation
-
-    - 全面掌握嵌入式 Linux 开发流程，涵盖系统构建、驱动开发、性能调优和安全加固。
-
-    - #strong[核心项目：] 构建了一个基于 RISC-V 的安全嵌入式 Linux 系统，集成了 SELinux 安全模块。
-
-    - #strong[技术栈：] C, Linux Kernel, Buildroot, SELinux, RISC-V.
+    - #strong[技术栈：] C, VFS, Device Tree (DTS), ARM Cortex-A, RISC-V.
 
   ],
   [
@@ -369,30 +350,15 @@
 
 #regular-entry(
   [
-    2020.07 – 2020.12
+    #strong[Embedded Linux Development (LFD450)] | Linux Foundation 官方高级课程
 
-    #strong[EF英孚教育成人英语听说课程] | EF English First 上海线下俱乐部 + 在线全球真人课程
+    - #link("https://training.linuxfoundation.org/training/embedded-linux-development/")[Linux Foundation 官方课程主页]
 
-    - 通过沉浸式英语环境和专业教师指导，系统提升了英语听说能力，达到流利交流水平。
+    - 体系化掌握工业级嵌入式 Linux 交叉编译流程、RootFS 裁剪、性能分析定界与系统级安全架构。
 
-    - 课程内容涵盖日常对话、职场沟通和技术英语。
+    - #strong[核心实战：] 基于 RISC-V 指令集架构，成功构建了集成 SELinux 强制访问控制 (MAC) 模块的高安全性嵌入式 Linux 基础基座。
 
-  ],
-  [
-  ],
-)
-
-#regular-entry(
-  [
-    2021.02 – 2021.03
-
-    #strong[Introduction to Linux (LFS101)] | linux基金会官方课程，linux kernel维护者全英文讲课
-
-    - #strong[课程URL：]https:\/\/training.linuxfoundation.org\/training\/introduction-to-linux\/\#
-
-    - 系统学习发行版Linux比如ubuntu的安装到操作系统基础，涵盖文件系统、权限管理、Shell 脚本编写和系统管理。
-
-    - 通过实践项目掌握 Linux 环境下的常用工具和命令行操作。
+    - #strong[技术栈：] C, Cross-compilation, SELinux, RISC-V, Buildroot.
 
   ],
   [
@@ -401,32 +367,15 @@
 
 #regular-entry(
   [
-    2021.01 – 2021.06
+    #strong[MIT 6.004 Computation Structures] | MIT OpenCourseWare (麻省理工学院公开课)
 
-    #strong[MIT 6.004 Computation Structures] | MIT OpenCourseWare 在线公开视频课程，全英文讲课
+    - #link("https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/")[MIT 6.004 官方课程主页]
 
-    - 深入学习计算机体系结构，涵盖数字逻辑设计、处理器架构、内存系统和并行计算。
+    - #strong[底层架构解构：] 深入剖析现代 CPU 微架构底层数字逻辑与硬件状态机设计。
 
-    - #strong[核心项目：] 该课程是CPU设计课程，作为软件工程师，我选择只是学习了CPU内部的数字逻辑的工作原理，主要是为了学习 流水线pipeline，mmu，TLB等的工作原理，以及比较先进的多发射乱序执行的CPU架构的工作原理。
+    - #strong[核心理论基建：] 系统掌握了多级流水线 (Pipeline) 停顿与转发、MMU 与 TLB 寻址机制，以及高级多发射乱序执行 (Out-of-Order Execution) 的核心硬件原理。
 
-    - #strong[技术栈：] MMU，cache，TLB，cpu设计。
-
-  ],
-  [
-  ],
-)
-
-#regular-entry(
-  [
-    2022.07 – 2022.12
-
-    #strong[LFD108x Linux Tools for Software Development] | Linux Foundation
-
-    - 深入学习 Linux 开发工具链，涵盖 GNU 工具链、调试器、性能分析工具和版本控制系统。
-
-    - #strong[核心项目：] 使用 GDB 和 Valgrind 对一个复杂的 C 项目进行性能分析和内存泄漏检测，优化了程序性能并修复了多个内存相关的 Bug。
-
-    - #strong[技术栈：] GNU 工具链 (GCC, GDB), Valgrind, Git, C。
+    - #strong[技术收益：] 建立起从“底层数字逻辑”到“上层操作系统”的全局硬件观，为复杂 SoC 的时序\/死锁 Debug 及内核性能优化提供了决定性的理论支撑。
 
   ],
   [
