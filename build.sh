@@ -113,7 +113,7 @@ run_rendercv() {
 # ==========================================
 main() {
     # 默认 Profile 设为你刚写的中文 internal 版，方便调试
-    local selected_profile=${1:-"myth-zh-int"}
+    local selected_profile=${1:-"myth-zh"}
 
     # 查字典：验证 Profile 是否存在
     if [[ -z "${PROFILES[$selected_profile]:-}" ]]; then

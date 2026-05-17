@@ -1,4 +1,11 @@
 settings:
   current_date: today
   bold_keywords: []
-  pdf_title: NAME - CV
+  pdf_title: "Kevin Aimaier - CV"
+# ⬇️ 真正的原厂大招：在这里强行锁死所有输出文件的文件名
+  render_command:
+    pdf_path: "rendercv_output/Kevin_Aimaier_CV.pdf"
+    typst_path: "rendercv_output/Kevin_Aimaier_CV.typ"
+    html_path: "rendercv_output/Kevin_Aimaier_CV.html"
+    markdown_path: "rendercv_output/Kevin_Aimaier_CV.md"
+    png_path: "rendercv_output/Kevin_Aimaier_CV.png"

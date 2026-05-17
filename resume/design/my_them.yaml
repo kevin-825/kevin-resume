@@ -32,7 +32,7 @@ design:
     font_size:
       body: 10pt
       # 【优化】中文名字通常只有 2-4 个字，30pt 会显得大得突兀，24pt 更加精致沉稳
-      name: 24pt
+      name: 20pt
       headline: 10pt
       connections: 10pt
       section_titles: 1.4em
