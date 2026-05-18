@@ -16,7 +16,7 @@
 **期望领域:** 芯片设计与验证、AI 加速器底层基建、物联网设备 (AIoT)、边缘计算
 
 # 个人优势 &专业技能 Core Competencies
-**编程语言与开发规范:** 具备 8 年高复杂度底层 C 语言实战经验；熟练运用 Python、Bash Shell、PowerShell、Tcl 构建自动化工具；熟悉 JSON/YAML 数据流序列化及 RISC-V/ARM 汇编语言。
+**编程语言与开发规范:** 具备 8 年高复杂度底层 C 语言实战经验,熟悉常用C库如Newlib/libgloss/uClibc/Musl/Glibc；熟练运用 Python、Bash Shell、PowerShell、Tcl 构建自动化工具；熟悉 JSON/YAML 数据流序列化及 RISC-V/ARMv8-M/A汇编语言。
 
 **体系结构与底层机制:** 深入掌握多核异构处理器架构 (RISC-V, ARMv7/v8-M, AArch64, Xtensa HiFi5 DSP)；精通高级中断控制路由 (PLIC/AIA, NVIC/GIC)、特权/异常隔离模型 (Machine/User, EL0-EL3) 及内存保护与映射单元 (PMP/MPU, MMU 与 Cache 一致性)。
 
