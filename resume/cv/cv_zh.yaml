@@ -4,6 +4,7 @@ cv:
   email: kflyn825@outlook.com
   # 修复 1：使用一个看起来真实的号码格式（校验器会通过这个格式）
   phone: "+86 185 0162 1780"
+  website: https://yultuzs.com/
   social_networks:
     - network: GitHub
       username: kevin-825
@@ -11,7 +12,7 @@ cv:
   sections:
 
     个人简介 Summary:
-      - 具有 8 年核心 BSP 与底层固件开发经验的资深嵌入式软件工程师，深谙 RISC-V 与 ARM 多核异构 SoC 体系。具备从硅前 FPGA 软硬协同验证 (Pre-silicon)、硅后点亮 (Bring-up) 到千万级终端量产的全生命周期实战经验。拥有深厚的操作系统内核功底 (Linux/RTOS)，及极度强悍的系统级跨域排错能力（擅长深度运用 GDB/JTAG/QEMU 攻坚跨核死锁、内存踩踏及异常宕机）。精通开发环境的 Docker 容器化构建，并善于运用 Generative AI 赋能底层架构调试与效能提升。现寻求芯片设计验证、AI 加速器及边缘计算领域的挑战性岗位，致力于通过硬核底软基建为前沿 SoC 的成功流片与商业交付构筑坚实壁垒。
+      - 具有 8 年核心 BSP 与底层固件开发经验的资深嵌入式软件工程师，深谙 RISC-V 与 ARM 多核异构 SoC 体系。具备从硅前 FPGA 软硬协同验证 (Pre-silicon)、硅后点亮 (Bring-up),QEMU软硬协同仿真验证，到千万级终端量产的全生命周期实战经验。拥有深厚的操作系统内核功底 (Linux/RTOS)，及极度强悍的系统级跨域排错能力，擅长深度运用 GDB/JTAG/QEMU 攻坚跨核死锁、内存踩踏及coredump异常宕机postmortem debugging。精通开发环境的 Docker 容器化构建，并善于运用 Generative AI 赋能底层架构调试与效能提升。现寻求芯片设计验证、AI 加速器及边缘计算领域的挑战性岗位，致力于通过硬核底软基建为前沿 SoC 的成功流片与商业交付构筑坚实壁垒。
 
     "求职意向 Job Intentions":
       - label: 目标岗位
@@ -33,6 +34,24 @@ cv:
       - label: 极客素养与综合能力
         details: 具备无障碍解析全英文硬核技术文献 (DataSheet, Architecture Manual) 与跨国协同交流能力；擅长运用 Generative AI 赋能架构设计与复杂排错；保持极强的技术自驱力，深度涉猎并实践 MIT OCW、Linux Foundation 等顶尖开源架构课程。
 
+    教育经历 Education:
+      - institution: 西北工业大学 (985/211、双一流)
+        # 修正：将学位并入 area 字段，让它们在一行显示
+        area: 电子信息工程 (EE) 
+        # 修正：将 degree 留空，避免左侧出现尴尬的空格
+        degree: "本科，工学学士"
+        date: 2013.09 - 2017.07
+        location: 西安  
+        highlights:
+          - 主要学习模拟/数字电路原理设计，微机原理与架构(MCU/DSP)，信号处理（连续/离散信号处理、统计信号处理及估计理论）
+
+      - institution: 厦门外国语学校 (厦门市重点高中)
+        # 修正：同样处理高中部分
+        area: 高中毕业
+        degree: ""
+        date: 2010.09 - 2013.07
+        location: 厦门
+
     工作经历 Experience:
       - company: 合肥君正科技有限公司
         position: 嵌入式软件工程师
@@ -41,7 +60,7 @@ cv:
         summary: “*项目1：*参与自研异构 AI MCU SoC在FPGA上硅前验证，该芯片是RISC-V 大小核架构 + TNPU，带MMU和64KB Cache（64Byte 8-way i/d cache line），大核性能对标arm coretex-A15及以上，面向安防/学习机/扫地机器人/边缘AI 等应用场景。”
         highlights:
           - **提议集成JTAG并软硬联调**：在极度缺乏 FPGA 验证资源（8-10人共用2台，周末无休）且无 JTAG 调试环境的情况下，提议并推进 JTAG 模块集成，并配合 SoC 部门耗时一月有余修复 GDB JTAG断链不稳定问题以及JTAG子板问题，成功拉起首套稳定可用的GDB OpenOCD JTAG软硬联调环境，结束了只靠串口打印的“盲人摸象”式无效和FPGA拉线看波形的低效debug窘境，使得debug体验效率有质的提升。
-          - **PLIC中断嵌套实现**：无JTAG debug手段的情况下，利用生成式AI（ChatGPT，Copilot和Gemini Pro）完成了复杂的QEMU模拟器模拟riscv CPU和PLIC硬件，完成 CPU 与 PLIC 的软硬件协同仿真，在这个模拟环境下运行FreeRTOS Demo并完成PLIC嵌套中断功能开发，完成开发后 FPGA 上运行验证，成功排查出 SoC 部门提供的子系统中断号偏移的Bug，使能58号中断结果60号中断触发58不触发。
+          - **PLIC中断嵌套实现**：无JTAG debug手段的情况下，利用QEMU模拟器模拟riscv CPU和PLIC硬件，完成 CPU 与 PLIC 的软硬件协同仿真，在这个模拟环境下运行FreeRTOS Demo并完成PLIC嵌套中断功能开发，完成开发后 FPGA 上运行验证，成功排查出 SoC 部门提供的子系统中断号偏移的Bug，使能58号中断结果60号中断触发58不触发。
           - **Cache/Spinlock底层适配优化**：研发cache驱动以支持cache flush/invalidate操作（按地址刷和按cache set index刷）。编写spinlock底层riscv汇编代码实现spinlock功能用以多核间自旋互斥操作。
           - **检查修复FreeRTOS底层适配**：修复第一个任务初始化导致的栈踩踏 Bug 及临界区中断关闭恢复 Bug，协助解决自旋锁死锁。
           - **静态编译windows版OpenOCD并生成容器化环境DockerImage**： 因Windows机器上开虚拟机Linux运行OpenOCD性能损失大难以满足Ghz处理器高速jtag GDB debug需求，大量运用AI 编码辅助工具（Github Copilot和Gemini Pro）编写Dockefile生成open OCD Windows版本编译环境Image，用于后续编译更新的OpenOCD源码以支持JTAG debug。OpenOCD源码静态编译Windows版OpenOCD的挑战在于其依赖包非常的多且繁杂，大部分都需要手动编译源码形成静态库才能链接到OpenOCD中，并且编译FLAG需要针对每个依赖包进行细致调整编译FLAG，最终成功生成了Windows版OpenOCD的DockerImage。有了这个容器环境，使得新手编译OpenOPCD源码的时间从2-3天缩短到5分钟，极大提升了团队成员更新OpenOCD源码的积极性和效率。
@@ -163,24 +182,15 @@ cv:
             - "**底层架构解构：** 深入剖析现代 CPU 微架构底层数字逻辑与硬件状态机设计。"
             - "**核心理论基建：** 系统掌握了多级流水线 (Pipeline) 停顿与转发、MMU 与 TLB 寻址机制，以及高级多发射乱序执行 (Out-of-Order Execution) 的核心硬件原理。"
             - "**技术收益：** 建立起从“底层数字逻辑”到“上层操作系统”的全局硬件观，为复杂 SoC 的时序/死锁 Debug 及内核性能优化提供了决定性的理论支撑。"
-    教育经历 Education:
-      - institution: 西北工业大学 (985/211、双一流)
-        # 修正：将学位并入 area 字段，让它们在一行显示
-        area: 电子信息工程 (EE) 
-        # 修正：将 degree 留空，避免左侧出现尴尬的空格
-        degree: "本科，工学学士"
-        date: 2013.09 - 2017.07
-        location: 西安  
-        highlights:
-          - 主要学习模拟/数字电路原理设计，微机原理与架构(MCU/DSP)，信号处理（连续/离散信号处理、统计信号处理及估计理论）
-
-      - institution: 厦门外国语学校 (厦门市重点高中)
-        # 修正：同样处理高中部分
-        area: 高中毕业
-        degree: ""
-        date: 2010.09 - 2013.07
-        location: 厦门
-
 
     兴趣爱好 Interests:
-      - 爬山，古典瑜伽，阅读，mysticism，登山，yoga & meditation，徒步旅行,写代码，linux kernel
+      - label: 接触大自然
+        details: 徒步、露营、登山等户外运动，喜欢在大自然中放松身心，享受宁静与美景。
+      - label: 体育运动
+        details: 喜欢排球、羽毛球等团队运动，享受运动带来的乐趣和挑战。
+      - label: 音乐&乐器
+        details: 喜欢听各种类型的音乐，维吾尔族民乐；收藏乐器，喜欢在闲暇时弹奏和练习音乐。
+      - label: Mystism & 禅修 & Yoga Meditation & Spirituality
+        details: 科技对人类文明的巨大推动无容置疑，可还有很多东西是科技无法触及和能理解的。养生智慧，以及如何使用身体（身体使用说明书）是神秘学的主宰区域，如何使用、接触不接触什么样的东西以保持身心健康不被负能和抑郁侵蚀、以及如何使用身体以保持专注力和创造力，这些都是我非常感兴趣的领域。学习了Shambhavi Mahamudra (香巴维大手印)，哈他瑜伽，非常喜欢，日常有时间时会自行练习，对昆达利尼瑜伽也非常感兴趣。
+      - label: 读书
+        details: 喜欢kindle电纸书上阅读，尤其是科技，神秘学相关的书。

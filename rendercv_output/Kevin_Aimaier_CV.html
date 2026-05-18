@@ -44,10 +44,11 @@
         <li>Phone: +86 185 0162 1780</li>
         <li>Email: <a href="mailto:kflyn825@outlook.com">kflyn825@outlook.com</a></li>
         <li>Location: 新疆 / 成都</li>
+        <li>Website: <a href="https://yultuzs.com/">yultuzs.com</a></li>
         <li>GitHub: <a href="https://github.com/kevin-825">kevin-825</a></li>
         </ul>
         <h1>个人简介 Summary</h1>
-        <p>具有 8 年核心 BSP 与底层固件开发经验的资深嵌入式软件工程师，深谙 RISC-V 与 ARM 多核异构 SoC 体系。具备从硅前 FPGA 软硬协同验证 (Pre-silicon)、硅后点亮 (Bring-up) 到千万级终端量产的全生命周期实战经验。拥有深厚的操作系统内核功底 (Linux/RTOS)，及极度强悍的系统级跨域排错能力（擅长深度运用 GDB/JTAG/QEMU 攻坚跨核死锁、内存踩踏及异常宕机）。精通开发环境的 Docker 容器化构建，并善于运用 Generative AI 赋能底层架构调试与效能提升。现寻求芯片设计验证、AI 加速器及边缘计算领域的挑战性岗位，致力于通过硬核底软基建为前沿 SoC 的成功流片与商业交付构筑坚实壁垒。</p>
+        <p>具有 8 年核心 BSP 与底层固件开发经验的资深嵌入式软件工程师，深谙 RISC-V 与 ARM 多核异构 SoC 体系。具备从硅前 FPGA 软硬协同验证 (Pre-silicon)、硅后点亮 (Bring-up),QEMU软硬协同仿真验证，到千万级终端量产的全生命周期实战经验。拥有深厚的操作系统内核功底 (Linux/RTOS)，及极度强悍的系统级跨域排错能力，擅长深度运用 GDB/JTAG/QEMU 攻坚跨核死锁、内存踩踏及coredump异常宕机postmortem debugging。精通开发环境的 Docker 容器化构建，并善于运用 Generative AI 赋能底层架构调试与效能提升。现寻求芯片设计验证、AI 加速器及边缘计算领域的挑战性岗位，致力于通过硬核底软基建为前沿 SoC 的成功流片与商业交付构筑坚实壁垒。</p>
         <h1>求职意向 Job Intentions</h1>
         <p><strong>目标岗位:</strong> 嵌入式软件架构工程师、芯片底层驱动工程师 (BSP)、系统软件开发工程师</p>
         <p><strong>期望领域:</strong> 芯片设计与验证、AI 加速器底层基建、物联网设备 (AIoT)、边缘计算</p>
@@ -58,6 +59,9 @@
         <p><strong>OS 内核与驱动框架:</strong> 具备深厚的 Linux 与 RTOS (FreeRTOS, OpenHarmony) 内核实战功底；精通内核任务调度算法、内存寻址分配、高并发同步原语及 VFS 子系统；熟练掌握 Linux 设备树 (DTS)、字符设备驱动模型、交叉构建 (Buildroot/Kconfig) 及系统引导拉起全流程。</p>
         <p><strong>系统级维测与工程化基建:</strong> 精通 GNU 工具链 (GCC, GDB, nm, objdump) 及 Makefile 构建；具备极其敏锐的极限 Bug 攻坚与现场还原能力 (跨域死锁追踪, 内存踩踏/泄漏分析, 宕机 Coredump 解析)；熟练应用 QEMU 系统级模拟器、Docker 开发环境容器化及 CI/CD (GitLab, Jenkins) 自动化流水线。</p>
         <p><strong>极客素养与综合能力:</strong> 具备无障碍解析全英文硬核技术文献 (DataSheet, Architecture Manual) 与跨国协同交流能力；擅长运用 Generative AI 赋能架构设计与复杂排错；保持极强的技术自驱力，深度涉猎并实践 MIT OCW、Linux Foundation 等顶尖开源架构课程。</p>
+        <h1>教育经历 Education</h1>
+        <h2>2013.09 - 2017.07 #h(1em) <strong>西北工业大学 (985/211、双一流)</strong> #h(1em) 电子信息工程 (EE) #h(1em) 本科，工学学士 #h(1em) 西安- 主要学习模拟/数字电路原理设计，微机原理与架构(MCU/DSP)，信号处理（连续/离散信号处理、统计信号处理及估计理论）</h2>
+        <h2>2010.09 - 2013.07 #h(1em) <strong>厦门外国语学校 (厦门市重点高中)</strong> #h(1em) 高中毕业 #h(1em) #h(1em) 厦门</h2>
         <h1>工作经历 Experience</h1>
         <h2><strong>合肥君正科技有限公司</strong>  2025.01 - 2025.05</h2>
         <p>嵌入式软件工程师 | 合肥和武汉分公司</p>
@@ -67,7 +71,7 @@
         <p><strong>提议集成JTAG并软硬联调</strong>：在极度缺乏 FPGA 验证资源（8-10人共用2台，周末无休）且无 JTAG 调试环境的情况下，提议并推进 JTAG 模块集成，并配合 SoC 部门耗时一月有余修复 GDB JTAG断链不稳定问题以及JTAG子板问题，成功拉起首套稳定可用的GDB OpenOCD JTAG软硬联调环境，结束了只靠串口打印的“盲人摸象”式无效和FPGA拉线看波形的低效debug窘境，使得debug体验效率有质的提升。</p>
         </li>
         <li>
-        <p><strong>PLIC中断嵌套实现</strong>：无JTAG debug手段的情况下，利用生成式AI（ChatGPT，Copilot和Gemini Pro）完成了复杂的QEMU模拟器模拟riscv CPU和PLIC硬件，完成 CPU 与 PLIC 的软硬件协同仿真，在这个模拟环境下运行FreeRTOS Demo并完成PLIC嵌套中断功能开发，完成开发后 FPGA 上运行验证，成功排查出 SoC 部门提供的子系统中断号偏移的Bug，使能58号中断结果60号中断触发58不触发。</p>
+        <p><strong>PLIC中断嵌套实现</strong>：无JTAG debug手段的情况下，利用QEMU模拟器模拟riscv CPU和PLIC硬件，完成 CPU 与 PLIC 的软硬件协同仿真，在这个模拟环境下运行FreeRTOS Demo并完成PLIC嵌套中断功能开发，完成开发后 FPGA 上运行验证，成功排查出 SoC 部门提供的子系统中断号偏移的Bug，使能58号中断结果60号中断触发58不触发。</p>
         </li>
         <li>
         <p><strong>Cache/Spinlock底层适配优化</strong>：研发cache驱动以支持cache flush/invalidate操作（按地址刷和按cache set index刷）。编写spinlock底层riscv汇编代码实现spinlock功能用以多核间自旋互斥操作。</p>
@@ -266,11 +270,12 @@
         <p><strong>技术收益：</strong> 建立起从“底层数字逻辑”到“上层操作系统”的全局硬件观，为复杂 SoC 的时序/死锁 Debug 及内核性能优化提供了决定性的理论支撑。</p>
         </li>
         </ul>
-        <h1>教育经历 Education</h1>
-        <h2>2013.09 - 2017.07 #h(1em) <strong>西北工业大学 (985/211、双一流)</strong> #h(1em) 电子信息工程 (EE) #h(1em) 本科，工学学士 #h(1em) 西安- 主要学习模拟/数字电路原理设计，微机原理与架构(MCU/DSP)，信号处理（连续/离散信号处理、统计信号处理及估计理论）</h2>
-        <h2>2010.09 - 2013.07 #h(1em) <strong>厦门外国语学校 (厦门市重点高中)</strong> #h(1em) 高中毕业 #h(1em) #h(1em) 厦门</h2>
         <h1>兴趣爱好 Interests</h1>
-        <p>爬山，古典瑜伽，阅读，mysticism，登山，yoga &amp; meditation，徒步旅行,写代码，linux kernel</p>
+        <p><strong>接触大自然:</strong> 徒步、露营、登山等户外运动，喜欢在大自然中放松身心，享受宁静与美景。</p>
+        <p><strong>体育运动:</strong> 喜欢排球、羽毛球等团队运动，享受运动带来的乐趣和挑战。</p>
+        <p><strong>音乐&amp;乐器:</strong> 喜欢听各种类型的音乐，维吾尔族民乐；收藏乐器，喜欢在闲暇时弹奏和练习音乐。</p>
+        <p><strong>Mystism &amp; 禅修 &amp; Yoga Meditation &amp; Spirituality:</strong> 科技对人类文明的巨大推动无容置疑，可还有很多东西是科技无法触及和能理解的。养生智慧，以及如何使用身体（身体使用说明书）是神秘学的主宰区域，如何使用、接触不接触什么样的东西以保持身心健康不被负能和抑郁侵蚀、以及如何使用身体以保持专注力和创造力，这些都是我非常感兴趣的领域。学习了Shambhavi Mahamudra (香巴维大手印)，哈他瑜伽，非常喜欢，日常有时间时会自行练习，对昆达利尼瑜伽也非常感兴趣。</p>
+        <p><strong>读书:</strong> 喜欢kindle电纸书上阅读，尤其是科技，神秘学相关的书。</p>
     </article>
 </body>
 
