@@ -226,6 +226,16 @@
 
 
 
+## **MIT 6.828/6.1810 Operating System Engineering** | MIT OpenCourseWare (麻省理工学院公开课)
+
+- [MIT Operating System Engineering 官方课程主页](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-828-operating-system-engineering-fall-2012/)
+
+- **核心理论基建：** 深入理解操作系统设计与实现的核心概念，包括进程管理、内存管理、文件系统和设备驱动等。
+
+- **技术收益：** 建立起对现代操作系统架构的全面认识，为深入研究和开发高性能、高可靠性的操作系统提供了坚实的理论基础。
+
+
+
 # 兴趣爱好 Interests
 **接触大自然:** 徒步、露营、登山等户外运动，喜欢在大自然中放松身心，享受宁静与美景。
 
