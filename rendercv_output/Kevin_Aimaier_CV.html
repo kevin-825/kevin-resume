@@ -74,19 +74,19 @@
         <p>“<em>项目1：</em>参与自研异构 AI MCU SoC在FPGA上硅前验证，该芯片是RISC-V 大小核架构 + TNPU，带MMU和64KB Cache（64Byte 8-way i/d cache line），大核性能对标arm coretex-A15及以上，面向安防/学习机/扫地机器人/边缘AI 等应用场景。”</p>
         <ul>
         <li>
-        <p><strong>提议集成JTAG并软硬联调</strong>：在极度缺乏 FPGA 验证资源（8-10人共用2台，周末无休）且无 JTAG 调试环境的情况下，提议并推进 JTAG 模块集成，并配合 SoC 部门耗时一月有余修复 GDB JTAG断链不稳定问题以及JTAG子板问题，成功拉起首套稳定可用的GDB OpenOCD JTAG软硬联调环境，结束了只靠串口打印的“盲人摸象”式无效和FPGA拉线看波形的低效debug窘境，使得debug体验效率有质的提升。</p>
+        <p><strong>提议集成JTAG并软硬联调</strong>：在极度缺乏 FPGA 验证资源（8-10人共用2台，周末无休）且无 JTAG 调试环境的情况下，提议并推进 JTAG 模块集成，并配合 SoC 部门耗时一月有余修复 GDB JTAG连接不稳定断链问题以及JTAG子板问题，成功拉起首套稳定可用的GDB OpenOCD JTAG软硬联调环境，结束了只靠串口打印的“盲人摸象”式无效和FPGA拉线看波形的低效debug窘境，使得debug体验效率有质的提升。</p>
         </li>
         <li>
-        <p><strong>PLIC中断嵌套实现</strong>：无JTAG debug手段的情况下，利用QEMU模拟器模拟riscv CPU和PLIC硬件，完成 CPU 与 PLIC 的软硬件协同仿真，在这个模拟环境下运行FreeRTOS Demo并完成PLIC嵌套中断功能开发，完成开发后 FPGA 上运行验证，成功排查出 SoC 部门提供的子系统中断号偏移的Bug，使能58号中断结果60号中断触发58不触发。</p>
+        <p><strong>PLIC中断嵌套实现</strong>：无JTAG debug手段的情况下，利用QEMU模拟器模拟riscv CPU和PLIC硬件，完成 riscv CPU 与 PLIC中断控制器的软硬件协同仿真，在这个模拟环境下运行FreeRTOS Demo并完成PLIC嵌套中断功能开发并且在FPGA上运行验证，成功排查出 SoC 部门提供的部分中断号偏移的Bug，使能58号中断结果60号中断触发58不触发，成功实现并验证了PLIC中断嵌套功能，极大提升了系统的中断处理能力和实时响应性能。</p>
         </li>
         <li>
-        <p><strong>Cache/Spinlock底层适配优化</strong>：研发cache驱动以支持cache flush/invalidate操作（按地址刷和按cache set index刷）。编写spinlock底层riscv汇编代码实现spinlock功能用以多核间自旋互斥操作。</p>
+        <p><strong>Cache/Spinlock底层适配优化</strong>：研发cache驱动以支持cache flush/invalidate操作（按地址刷和按cache set index刷）。编写spinlock底层riscv汇编代码实现spinlock功能用以多核间自旋互斥操作。协助同事解决自旋锁死锁问题。</p>
         </li>
         <li>
-        <p><strong>检查修复FreeRTOS底层适配</strong>：修复第一个任务初始化导致的栈踩踏 Bug 及临界区中断关闭恢复 Bug，协助解决自旋锁死锁。</p>
+        <p><strong>检查修复FreeRTOS底层适配</strong>：检查FreeRTOS底层适配汇编代码，修复底层的是否在中断上下文/临界区的函数，保证了系统能够在ISR里稳定唤醒bottom half中断延迟处理任务。修复local_irq_save和local_irq_restore函数，修复了系统无法稳定触发中断的问题，保证了系统的tick中断时序，也保证了临界区中断关闭恢复的正确性。修复FreeRTOS第一个任务Stack初始化函数引起的任务退出中断上下文时发生栈踩踏的 Bug ，提高了系统的稳定性。</p>
         </li>
         <li>
-        <p><strong>静态编译windows版OpenOCD并生成容器化环境DockerImage</strong>： 因Windows机器上开虚拟机Linux运行OpenOCD性能损失大难以满足Ghz处理器高速jtag GDB debug需求，大量运用AI 编码辅助工具（Github Copilot和Gemini Pro）编写Dockefile生成open OCD Windows版本编译环境Image，用于后续编译更新的OpenOCD源码以支持JTAG debug。OpenOCD源码静态编译Windows版OpenOCD的挑战在于其依赖包非常的多且繁杂，大部分都需要手动编译源码形成静态库才能链接到OpenOCD中，并且编译FLAG需要针对每个依赖包进行细致调整编译FLAG，最终成功生成了Windows版OpenOCD的DockerImage。有了这个容器环境，使得新手编译OpenOPCD源码的时间从2-3天缩短到5分钟，极大提升了团队成员更新OpenOCD源码的积极性和效率。</p>
+        <p><strong>静态编译windows版OpenOCD并生成容器化环境DockerImage</strong>： 因Windows机器上开虚拟机Linux运行OpenOCD性能损失大难以满足Ghz处理器高速jtag GDB debug需求，编写Dockefile并生成openOCD Windows版本编译环境的DockerImage，用于后续编译更新的OpenOCD源码以支持JTAG debug。OpenOCD源码静态编译Windows版OpenOCD的挑战在于其依赖包非常的多且繁杂，大部分都需要手动编译源码形成静态库才能链接到OpenOCD中，并且编译FLAG需要针对每个依赖包进行细致调整编译FLAG。有了这个容器化编译环境，使得新手搭建编译OpenOPCD源码环境的时间从2-3天缩短到5分钟，极大提升了团队成员更新OpenOCD源码的积极性和效率。</p>
         </li>
         <li>
         <p><strong>GDB初始化脚本编写以及调试修复严重bug</strong>：独立编写适合当前工程的GDB init 脚本（主要包含自动加载可执行elf文件并自动连接目标版并下载，还有一些项目实用的CMD）极大缩短了调试前期工作开销。利用写好的GDB init脚本进行实战调试并调试， 反汇编内存现场分析，成功定位困扰算法部门很久的紧急 Bug（TNPU 越界写坏大核中断向量表）并且配合算法部分同事一步一步定位并成功找到触发异常的代码。</p>
